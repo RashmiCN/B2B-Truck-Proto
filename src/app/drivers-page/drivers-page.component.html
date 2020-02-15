@@ -1,0 +1,126 @@
+<div>
+<mat-accordion>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Register Your Vehicle Here..
+      </mat-panel-title>
+      <mat-panel-description>
+        Click here to provide details
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <form class="example-form">
+      <table class="example-full-width" cellspacing="0">
+        <tr>
+          <td>
+            <mat-form-field class="example-full-width" color="warn">
+              <input matInput placeholder="First name" />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="example-full-width" color="warn">
+              <input matInput placeholder="Last Name" />
+            </mat-form-field>
+          </td>
+        </tr>
+      </table>
+
+      <table class="example-full-width" cellspacing="0">
+        <tr>
+          <td>
+            <mat-form-field class="example-full-width" color="warn">
+              <input matInput placeholder="Truck Type" />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="example-full-width" color="warn">
+              <input matInput placeholder="Tonnage Type" />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="example-full-width" color="warn">
+              <input matInput placeholder="Permit Type" />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="example-full-width" color="warn">
+              <input matInput placeholder="Registered State" />
+            </mat-form-field>
+          </td>
+        </tr>
+      </table>
+      <table class="example-full-width" cellspacing="0">
+        <tr>
+          <td>
+            <mat-form-field class="example-full-width" color="warn">
+              <input matInput placeholder="Vehicle Number" />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="example-full-width" color="warn">
+              <input matInput placeholder="Upload Truck Image" />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="example-full-width" color="warn">
+              <input matInput placeholder="Upload RC Image" />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="example-full-width" color="warn">
+              <input matInput placeholder="Upload Insurance" />
+            </mat-form-field>
+          </td>
+        </tr>
+      </table>
+       <button mat-raised-button style="float: right;" color="primary">Register</button>
+    </form>
+  </mat-expansion-panel>
+</mat-accordion>
+</div>
+<div style="padding-top:1em;">
+  <mat-card class="matcard">Trips</mat-card>
+</div>
+<div style="padding:1em 1em;">
+
+  <mat-form-field color="warn">
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+  </mat-form-field>
+
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" matSort>
+
+    <!-- ID Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+      <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+    </ng-container>
+
+    <!-- Progress Column -->
+    <ng-container matColumnDef="progress">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Progress </th>
+      <td mat-cell *matCellDef="let row"> {{row.progress}}% </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+      <td mat-cell *matCellDef="let row"> {{row.name}} </td>
+    </ng-container>
+
+    <!-- Color Column -->
+    <ng-container matColumnDef="color">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Color </th>
+      <td mat-cell *matCellDef="let row" [style.color]="row.color"> {{row.color}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+    </tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+</div>
+
+</div>

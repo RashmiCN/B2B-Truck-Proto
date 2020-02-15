@@ -1,0 +1,32 @@
+.example-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.example-container > * {
+  width: 100%;
+}
+
+input {
+  color: crimson;
+}
+.example-button-row button,
+.example-button-row a {
+  margin-right: 8px;
+}
+
+input[type="text"],
+select.form-control {
+  background: rgba(204, 202, 202, 0.678);
+  border: none;
+  border-bottom: 1px solid #000000;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-radius: 0.3;
+}
+
+input[type="text"]:focus,
+select.form-control:focus {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
